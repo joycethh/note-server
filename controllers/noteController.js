@@ -4,7 +4,7 @@ import Note from "../models/noteModel.js";
 
 export const getNotes = async (req, res) => {
   try {
-    const notes = await Note.find();
+    const notes = await Note.find().sort({ createdAt: -1 });
 
     res.status(200).json(notes);
   } catch (error) {
