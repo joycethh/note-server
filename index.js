@@ -18,6 +18,9 @@ app.use(cors());
 //routes
 app.use("/", noteRoutes);
 
+//for deployment
+app.get("/", (req, res) => res.send("NOTE APP IS RUNNING"));
+
 //DB connection
 mongoose
   .connect(process.env.MONGODB_URL, {
