@@ -53,7 +53,7 @@ export const updateNote = async (req, res) => {
   const { id } = req.params;
   const { title, content } = req.body;
   const updatedNote = { _id: id, title, content };
-  console.log(updatedNote);
+
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send(`No such note with this id: ${id}`);
 
