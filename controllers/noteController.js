@@ -31,7 +31,7 @@ export const deleteNote = async (req, res) => {
 
   const seletedNote = await Note.findByIdAndDelete({ _id: id });
   if (seletedNote) {
-    res.status(200).json({ mssg: "The seleted note is deleted successfully" });
+    res.status(200).json(seletedNote._id);
   }
   if (!seletedNote) {
     res.status(400).json({ mssg: "Coudln't find note with the id" });
